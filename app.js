@@ -21,7 +21,7 @@ var bot = new builder.UniversalBot(connector, function (session, args) {
     session.send("Hi, Welcome to my test bot. You can ask me for a random number, the date on a given day this week, or the current time.");
 });
 // Add global LUIS recognizer to bot
-var luisAppUrl = process.env.LUIS_APP_URL || 'https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/ac946874-29f5-47c9-bd28-c0799efd0638?subscription-key=9396e3be8b7640c3ba884ad3672a2b0d&verbose=true&timezoneOffset=0';
+var luisAppUrl = process.env.LUIS_APP_URL;
 bot.recognizer(new builder.LuisRecognizer(luisAppUrl));
 
 bot.dialog('random number', [
